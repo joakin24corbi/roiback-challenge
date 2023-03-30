@@ -1,4 +1,57 @@
-# Getting Started with Create React App
+# ROIBACK - Technical challenge
+
+## Background
+El objetivo es "reinventar" uno de nuestros productos principales (Módulo de
+fidelización). En la industria de hostelería un módulo de fidelización es una sección de
+la web que permite a los usuario registrarse y autenticarse para obtener descuentos y
+ventajas. En este caso existen dos tipos de perfiles (Particulares y Agencias).
+
+## Descripción del test
+El objetivo de este desafío front end consiste en implementar un simple pero efectivo
+componente web que permita a los usuarios dar de alta una nueva cuenta eligiendo un
+tipo de perfil. Como mínimo los usuarios deberán poder elegir con qué tipo de perfil se
+van a registrar (Particular o Agencia). Al completar los campos que pertenecen a dicho
+perfil el componente mostrará un mensaje saludando al usuario y mostrando los
+descuentos y ventajas que le pertencen.
+
+## Requisitos del componente
+● Debe obtener los datos de la pantalla inicial (Textos y formularios) vía una
+petición AJAX antes de ser renderizado.\
+● Cuando el usuario elige el tipo de perfil, el componente debe obtener
+los campos del formulario via AJAX que pertenecen a dicho perfil.\
+● Cuando el usuario ha completado todos los campos correctamente, se debe
+mostrar la pantalla de bienvenida.
+
+
+Adjuntamos el enlace a un Mockup orientativo sobre el funcionamiento del
+componente.
+
+https://projects.invisionapp.com/share/2A11K1YEDJE7#/screens
+
+Para este desafío se debe entregar un repositorio GIT con el componente web
+utilizando React.
+
+Si es más cómodo para ti. las respuestas de las peticiones AJAX pueden estar
+mockeadas.
+
+## ¿Qué estamos buscando?
+Un componente javascript bien estructurado.
+
+HTML 5 limpio y legible.
+
+Estilos de CSS limpios y legibles (puedes usar cualquier preprocesador de estilos).
+
+En Roiback damos mucha importancia al trabajo en equipo por lo que valoramos las
+buenas prácticas de desarrollo como docstring, testing, lint, etc..
+
+No dude en experimentar, la clave es mostrar sus ideas y conocimientos en el
+desarrollo frontend.
+
+<br />
+<br />
+<br />
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +121,64 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<br />
+<br />
+<br />
+
+## Mock backend server
+
+Install JSON Server 
+
+```
+yarn add -g json-server
+```
+
+Create a `db.json` file with some data
+
+```json
+{
+  "profiles": [
+    { "id": 1, "title": "guest", "text": "A hotel Guest" },
+    { "id": 2, "title": "agency", "text": "A travel agency" }
+  ],
+  "forms": [
+    { "id": 1, "title": "Hotel guest", "profileId": 1, "fields": [
+      { "id": 1, "label": "Name", "placeholder": "Enter your name", "required": true },
+      { "id": 2, "label": "Last Name", "placeholder": "Enter your last name", "required": true },
+      { "id": 3, "label": "Email", "placeholder": "Enter your email", "required": true }  
+    ]},
+    { "id": 2, "title": "Travel agency", "profileId": 2, "fields": [
+      { "id": 4, "label": "Company Name", "placeholder": "Enter your company name", "required": true },
+      { "id": 5, "label": "Agency Id Code", "placeholder": "Enter Agency Id Code", "required": true },
+      { "id": 6, "label": "Email", "placeholder": "Enter your email", "required": true }
+    ]}
+  ]
+}
+```
+
+Start JSON Server
+
+```bash
+json-server --watch src/db/db.json --port 3004
+```
+
+Now if you go to [http://localhost:3000/posts/1](http://localhost:3000/posts/1), you'll get
+
+```json
+{ "id": 1, "title": "json-server", "author": "typicode" }
+```
+
+For more info visit: https://github.com/typicode/json-server
+
+<br />
+<br />
+<br />
+
+## Environment file
+
+Create an environment file `.env` with the following entries: 
+
+```
+REACT_APP_API_URL: uri of the backend server
+```

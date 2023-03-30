@@ -1,0 +1,18 @@
+{
+  "profiles": [
+    { "id": 1, "title": "guest", "text": "A hotel Guest" },
+    { "id": 2, "title": "agency", "text": "A travel agency" }
+  ],
+  "forms": [
+    { "id": 1, "title": "Hotel guest", "profileId": 1, "fields": [
+      { "id": 1, "name": "name", "label": "Name", "placeholder": "Enter your name", "type": "TEXT", "mandatory": true },
+      { "id": 2, "name": "lastName", "label": "Last Name", "placeholder": "Enter your last name", "type": "TEXT", "mandatory": true },
+      { "id": 3, "name": "email", "label": "Email", "placeholder": "Enter your email", "type": "EMAIL", "mandatory": true }  
+    ]},
+    { "id": 2, "title": "Travel agency", "profileId": 2, "fields": [
+      { "id": 4, "name": "companyName", "label": "Company Name", "placeholder": "Enter your company name", "type": "TEXT", "mandatory": true },
+      { "id": 5, "name": "agencyCode", "label": "Agency Id Code", "placeholder": "Enter Agency Id Code", "type": "TEXT", "mandatory": true },
+      { "id": 6, "name": "email", "label": "Email", "placeholder": "Enter your email", "type": "EMAIL", "mandatory": true }
+    ]}
+  ]
+}
